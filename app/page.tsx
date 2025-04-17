@@ -1,23 +1,19 @@
 "use client";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import style from "./styles.module.scss";
+import ProductList from "@/app/_infrastructure/components/ProductList/ProductList";
+import { Product } from "@/app/src/types/product";
 
 interface Props {
     children: ReactNode;
 }
 
-export default function Home({}: Props) {
-    const [counter, setCounter] = useState<number>(0);
+const PRODUCTS: Product[] = [{ id: Date.now(), title: "string", img: "string", price: 100 }];
 
+export default function Home({}: Props) {
     return (
         <>
-            <button className={style.btn} onClick={() => setCounter(counter + 1)}>
-                Increment
-            </button>
-            <button className={style.btn} onClick={() => setCounter(counter - 1)}>
-                Decrement
-            </button>
-            <div style={{ margin: "10px" }}>{counter}</div>
+            <ProductList products={PRODUCTS} />
         </>
     );
 }
