@@ -39,3 +39,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 !!!! styles
 // https://flowbite.com/docs/components/card/
 // https://tailwindcss.com/docs/flex
+// https://ui.shadcn.com/docs/components/input
+// https://mui.com/material-ui/react-popper/

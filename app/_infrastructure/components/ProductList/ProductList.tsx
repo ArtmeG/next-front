@@ -8,7 +8,7 @@ interface Props {
 
 const ProductList = ({ products }: Props) => {
     return (
-        <div>
+        <div className={"flex flex-wrap gap-2"}>
             {products.map((product: Product) => (
                 <ProductListItem key={product.id} product={product} />
             ))}

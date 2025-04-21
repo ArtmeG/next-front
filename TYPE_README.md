@@ -186,3 +186,39 @@ function getCurrentObj3<T extends boolean = false>(isExtend?: boolean): CurrentO
 const a: SimpleType = getCurrentObj3();
 const b: ExtendType = getCurrentObj3<true>(true);
 ```
+
+
+### mapped type
+
+```bash
+enum UserRole {
+    ADMIN = "admin",
+    USER = "user",
+    GUEST = "guest",
+}
+
+type AdminType = { name: string };
+type UserType = { title: string };
+type GuestType = { name: string; title: string };
+
+type RoleTypeMap = {
+    [UserRole.ADMIN]: AdminType;
+    [UserRole.USER]: UserType;
+    [UserRole.GUEST]: GuestType;
+};
+
+type RoleType<T extends UserRole> = RoleTypeMap[T];
+
+function getRole<T extends UserRole>(role: T): RoleType<T> {
+    switch (role) {
+        case UserRole.ADMIN:
+            return { name: "asdfasdf" } as RoleType<T>;
+        case UserRole.USER:
+            return { title: "asdfasdf" } as RoleType<T>;
+        case UserRole.GUEST:
+            return { name: "asdfasdf", title: "asdfasdf" } as RoleType<T>;
+    }
+}
+
+const admin = getRole(UserRole.ADMIN);
+```
