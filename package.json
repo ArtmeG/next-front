@@ -11,7 +11,9 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
+    "@tailwindcss/vite": "^4.1.4",
     "mobx": "^6.13.7",
     "mobx-react-lite": "^4.1.0",
     "mobx-utils": "^6.1.0",
@@ -31,7 +33,7 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "sass": "^1.86.3",
-    "tailwindcss": "^4",
+    "tailwindcss": "^4.1.4",
     "typescript": "^5"
   }
 }
