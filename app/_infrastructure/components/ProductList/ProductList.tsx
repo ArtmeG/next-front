@@ -13,7 +13,7 @@ const ProductList = ({ products }: Props) => {
     };
 
     return (
-        <div className={"flex flex-wrap gap-2"}>
+        <div className={"flex flex-wrap justify-center gap-5"}>
             {products.map((product: Product) => (
                 <ProductListItem key={product.id} product={product} onBuy={onBuy} />
             ))}
