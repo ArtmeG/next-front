@@ -6,9 +6,10 @@ import Image from "next/image";
 interface Props {
     product: Product;
     children?: React.ReactNode;
+    onBuy: (id: string) => void;
 }
 
-const ProductListItem = ({ product, children }: Props) => {
+const ProductListItem = ({ product, children, onBuy }: Props) => {
     const discountedPrice = product.discount ? product.price - product.discount : product.price;
 
     return (
@@ -40,7 +41,7 @@ const ProductListItem = ({ product, children }: Props) => {
                     </span>
                 )}
             </div>
-            <Button variant="contained" color="success" fullWidth>
+            <Button variant="contained" color="success" fullWidth onClick={() => onBuy(product.id)}>
                 Купити
             </Button>
             {children}
