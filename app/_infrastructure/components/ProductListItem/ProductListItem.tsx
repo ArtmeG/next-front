@@ -1,6 +1,7 @@
 import React from "react";
 import { Product } from "@/app/src/types/product";
 import { Button } from "@mui/material";
+import Image from "next/image";
 
 interface Props {
     product: Product;
@@ -12,8 +13,10 @@ const ProductListItem = ({ product, children }: Props) => {
 
     return (
         <div className="flex max-w-xs flex-col rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-            <img
+            <Image
                 src={product.img}
+                width={286}
+                height={192}
                 alt={product.title}
                 className="mb-4 h-48 w-full object-contain"
             />
@@ -37,11 +40,9 @@ const ProductListItem = ({ product, children }: Props) => {
                     </span>
                 )}
             </div>
-
             <Button variant="contained" color="success" fullWidth>
                 Купити
             </Button>
-
             {children}
         </div>
     );
