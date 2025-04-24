@@ -13,7 +13,6 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
-    "@tailwindcss/vite": "^4.1.4",
     "mobx": "^6.13.7",
     "mobx-react-lite": "^4.1.0",
     "mobx-utils": "^6.1.0",
