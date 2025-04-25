@@ -1,7 +1,6 @@
-import { createContext } from "node:vm";
-import { Context, useContext } from "react";
+import { Context, createContext, useContext } from "react";
 import { ShoppingCartApi } from "@/app/src/modules/shoppingCart/types/shoppingCartApi";
 
-export const ShoppingCartContext = createContext();
-export const useShoppingCartContext = (): ShoppingCartApi =>
-    useContext<ShoppingCartApi>(ShoppingCartContext as Context<ShoppingCartApi>);
+export const ShoppingCartContext = createContext<ShoppingCartApi | null>(null);
+export const useShoppingCartContext = (): ShoppingCartApi | null =>
+    useContext<ShoppingCartApi | null>(ShoppingCartContext as Context<ShoppingCartApi | null>);

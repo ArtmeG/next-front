@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Product } from "@/app/src/types/product";
 import { Button } from "@mui/material";

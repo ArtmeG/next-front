@@ -1,19 +1,26 @@
 "use client";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import ShoppingCartViewModel from "@/app/src/modules/shoppingCart/ShoppingCartViewModel";
-// import { ShoppingCartContext } from "@/app/src/modules/shoppingCart/context/ShoppingCartContext";
 import ShoppingCart from "@/app/src/modules/shoppingCart/components/ShoppingCart/ShoppingCart";
+import { ShoppingCartContext } from "./context/ShoppingCartContext";
 
 const ShoppingCartController = () => {
-    const vm = useMemo(() => new ShoppingCartViewModel(), []);
+    const vm = useMemo(() => {
+        console.log("init ShoppingCartViewModel");
+
+        return new ShoppingCartViewModel();
+    }, []);
+
+    useEffect(() => {
+        return () => {
+            vm.destroy();
+        };
+    }, []);
 
     return (
-        <>
+        <ShoppingCartContext.Provider value={vm}>
             <ShoppingCart />
-            {/*<ShoppingCartContext.Previder value={vm}>*/}
-            {/*    <ShoppingCart />*/}
-            {/*</ShoppingCartContext.Previder>*/}
-        </>
+        </ShoppingCartContext.Provider>
     );
 };
 

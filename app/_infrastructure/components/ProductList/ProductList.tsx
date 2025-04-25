@@ -8,14 +8,14 @@ interface Props {
 }
 
 const ProductList = ({ products }: Props) => {
-    const onBuy = (id: string) => {
-        console.log(id);
-    };
+    // const onBuy = (id: string) => {
+    //     console.log(id);
+    // };
 
     return (
         <div className={"flex flex-wrap justify-center gap-5"}>
             {products.map((product: Product) => (
-                <ProductListItem key={product.id} product={product} onBuy={onBuy} />
+                <ProductListItem key={product.id} product={product} onBuy={() => {}} />
             ))}
         </div>
     );
