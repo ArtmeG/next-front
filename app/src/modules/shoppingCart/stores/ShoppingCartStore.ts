@@ -27,12 +27,12 @@ class ShoppingCartStore {
         return this._shoppingCart;
     }
 
-    onAdd = (item: ShoppingCartApi) => {
+    onAdd = (item: Product) => {
         this._shoppingCart.push(item);
     };
 
-    onRemove = (item: ShoppingCartApi) => {
-        // todo
+    onRemove = (item: Product) => {
+        this._shoppingCart = this._shoppingCart.filter(product => product.id !== item.id);
     };
 }
 
