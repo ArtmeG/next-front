@@ -3,7 +3,9 @@ import { useShoppingCartContext } from "@/app/src/modules/shoppingCart/context/S
 import Test from "@/app/src/modules/shoppingCart/components/Test/Test";
 import { Button } from "@mui/material";
 
-const ShoppingCart = () => {
+interface IProps {}
+
+const ShoppingCart = ({}: IProps) => {
     const shoppingCartContext = useShoppingCartContext();
 
     return (

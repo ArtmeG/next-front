@@ -1,25 +1,43 @@
 import { Product } from "@/app/src/types/product";
-import { ShoppingCartApi } from "@/app/src/modules/shoppingCart/types/shoppingCartApi";
-import { makeAutoObservable } from "mobx";
+import { makeObservable, observable, runInAction } from "mobx";
 
 class ShoppingCartStore {
     private _shoppingCart: Product[] = [];
     ////////////////
-    private _count = 0;
+    @observable private _count = 0;
 
     constructor() {
-        makeAutoObservable(this);
-        // makeObservable(this);
+        // makeAutoObservable(this);
+        // 4
+        makeObservable(this);
     }
 
     get count() {
         return this._count;
     }
 
+    // @computed
+    get isCount(): boolean {
+        return this._count > 10;
+    }
+
+    ///1
     // @action
+    // onAddCount = () => {
+    //     this._count = this._count + 1;
+    // };
+
+    ///2
+    // onAddCount = action(() => {
+    //     console.log("------", this._count);
+    //     this._count = this._count + 1;
+    // });
+
+    // 3
     onAddCount = () => {
-        console.log("------", this._count);
-        this._count = this._count + 1;
+        runInAction(() => {
+            this._count = this._count + 1;
+        });
     };
     ///////
 

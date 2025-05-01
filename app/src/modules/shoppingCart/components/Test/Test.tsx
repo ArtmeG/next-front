@@ -11,7 +11,7 @@ const Test = () => {
 
     return (
         <div>
-            <div>count------{shoppingCartContext?.shoppingCartStore.count}</div>
+            <div>count------{JSON.stringify(shoppingCartContext?.shoppingCartStore.count)}</div>
         </div>
     );
 };
