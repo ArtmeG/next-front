@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { useShoppingCartContext } from "@/app/src/modules/shoppingCart/context/ShoppingCartContext";
-import { Button } from "@mui/material";
 import { observer } from "mobx-react-lite";
-import { trace } from "mobx";
+import { PRODUCTS } from "@/app/src/mocks/products";
+import { ShoppingCartApi } from "@/app/src/modules/shoppingCart/types/shoppingCartApi";
 
 const Test = () => {
-    const shoppingCartContext = useShoppingCartContext();
+    const shoppingCartContext: ShoppingCartApi | null = useShoppingCartContext();
+
+    const [index, setIndex] = useState(0);
 
     // trace(true);
 
+    const onClick = () => {
+        shoppingCartContext?.onAdd(PRODUCTS[index]);
+    };
+
+    const onChange = (e: any) => {
+        const value = e.target.value;
+        setIndex(value);
+    };
+
     return (
         <div>
+            <input value={index} type={"number"} onChange={onChange} />
+
+            <button onClick={onClick}>add</button>
             <div>count------{JSON.stringify(shoppingCartContext?.shoppingCartStore.count)}</div>
         </div>
     );

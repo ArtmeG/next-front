@@ -17,12 +17,12 @@ class ShoppingCartViewModel implements ShoppingCartApi {
         return this._shoppingCartStore?.shoppingCart as Product[];
     }
 
-    onAdd = (item: ShoppingCartApi) => {
+    onAdd = (item: Product) => {
+        console.log("item>>>>", item);
         this._shoppingCartStore?.onAdd(item);
-        // sendAnal
     };
 
-    onRemove = (item: ShoppingCartApi) => {
+    onRemove = (item: Product) => {
         this._shoppingCartStore?.onRemove(item);
     };
 
