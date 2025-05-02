@@ -13,7 +13,8 @@ class CounterStore {
 
     @computed
     get isEven(): boolean {
-        return this._count % 2 === 0;
+        // return this._count % 2 === 0;
+        return this._count > 10;
     }
 
     @action
