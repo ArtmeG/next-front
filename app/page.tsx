@@ -12,7 +12,7 @@ export default function Home({}: Props) {
     return (
         <>
             <ShoppingCartController />
-            <Counter />
+            {/*<Counter />*/}
 
             <h1 className="mb-6 text-center text-3xl font-bold">Ноутбуки</h1>
             <ProductList products={PRODUCTS} />

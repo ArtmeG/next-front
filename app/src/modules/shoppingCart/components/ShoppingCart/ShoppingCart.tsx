@@ -12,9 +12,9 @@ const ShoppingCart = ({}: IProps) => {
     return (
         <div className={"m-5 flex flex-col gap-6"}>
             <ShoppingCartList />
-            <Test />
-            <Button onClick={shoppingCartContext?.shoppingCartStore.onAddCount}>dddd</Button>
-            <button onClick={shoppingCartContext?.shoppingCartStore.onAddCount}>dddd</button>
+            {/*<Test />*/}
+            {/*<Button onClick={shoppingCartContext?.shoppingCartStore.onAddCount}>dddd</Button>*/}
+            {/*<button onClick={shoppingCartContext?.shoppingCartStore.onAddCount}>dddd</button>*/}
         </div>
     );
 };
