@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import ProductListItem from "@/app/_infrastructure/components/ProductListItem/ProductListItem";
-import { Product } from "@/app/src/types/product";
+import { IProduct } from "@/app/src/types/IProduct";
 
 interface Props {
-    products: Product[];
+    products: IProduct[];
 }
 
 const ProductList = ({ products }: Props) => {
@@ -14,7 +14,7 @@ const ProductList = ({ products }: Props) => {
 
     return (
         <div className={"flex flex-wrap justify-center gap-5"}>
-            {products.map((product: Product) => (
+            {products.map((product: IProduct) => (
                 <ProductListItem key={product.id} product={product} onBuy={() => {}} />
             ))}
         </div>

@@ -1,8 +1,9 @@
-import { Product } from "@/app/src/types/product";
 import { action, makeObservable, observable } from "mobx";
+import { IShoppingCartProduct } from "@/app/src/modules/shoppingCart/types/shoppingCartTypes";
+import { IProduct } from "@/app/src/types/IProduct";
 
 class ShoppingCartStore {
-    @observable.shallow private _shoppingCart: Product[] = [];
+    @observable private _shoppingCart: IShoppingCartProduct[] = [];
 
     constructor() {
         makeObservable(this);
@@ -12,13 +13,15 @@ class ShoppingCartStore {
         return this._shoppingCart;
     }
 
+    // todo написати логіку isChecked
+
     @action
-    onAdd = (item: Product) => {
-        this._shoppingCart.push(item);
+    onAdd = (item: IShoppingCartProduct) => {
+        this._shoppingCart.push({ product: IProduct, isChecked: true });
     };
 
     @action
-    onRemove = (item: Product) => {
+    onRemove = (item: IShoppingCartProduct) => {
         this._shoppingCart = this._shoppingCart.filter(product => product.id !== item.id);
     };
 }

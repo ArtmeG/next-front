@@ -12,6 +12,7 @@ const Test = () => {
     // trace(true);
 
     const onClick = () => {
+        shoppingCartContext?.onAdd({...PRODUCTS[index], isC...: true});
         shoppingCartContext?.onAdd(PRODUCTS[index]);
     };
 

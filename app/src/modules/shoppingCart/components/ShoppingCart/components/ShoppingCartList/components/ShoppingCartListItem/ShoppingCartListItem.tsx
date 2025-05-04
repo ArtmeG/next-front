@@ -1,19 +1,22 @@
 import React from "react";
-import { Product } from "@/app/src/types/product";
+import { IProduct } from "@/app/src/types/IProduct";
 import Image from "next/image";
 import { Button } from "@mui/material";
+import ShoppingCartListItemCheckbox from "@/app/src/modules/shoppingCart/components/ShoppingCart/components/ShoppingCartList/components/ShoppingCartListItemCheckbox/ShoppingCartListItemCheckbox";
 
 interface Props {
-    item: Product;
+    item: IProduct;
     children?: React.ReactNode;
-    onBuy: (id: Product) => void;
-    onRemove: (id: Product) => void;
+    onBuy: (id: IProduct) => void;
+    onRemove: (id: IProduct) => void;
 }
 
 const ShoppingCartListItem = ({ item, children, onBuy, onRemove }: Props) => {
     const discountedPrice = item.discount ? item.price - item.discount : item.price;
+
     return (
         <div className="flex max-w-xs flex-col rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            <ShoppingCartListItemCheckbox />
             <Image
                 src={item.img}
                 width={286}

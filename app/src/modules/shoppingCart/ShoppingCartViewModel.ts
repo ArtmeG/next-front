@@ -1,6 +1,6 @@
 import { ShoppingCartApi } from "@/app/src/modules/shoppingCart/types/shoppingCartApi";
 import ShoppingCartStore from "@/app/src/modules/shoppingCart/stores/ShoppingCartStore";
-import { Product } from "@/app/src/types/product";
+import { IProduct } from "@/app/src/types/IProduct";
 
 class ShoppingCartViewModel implements ShoppingCartApi {
     private _shoppingCartStore: ShoppingCartStore | null = null;
@@ -13,15 +13,15 @@ class ShoppingCartViewModel implements ShoppingCartApi {
         return this._shoppingCartStore as ShoppingCartStore;
     }
 
-    get getShoppingCart(): Product[] {
-        return this._shoppingCartStore?.shoppingCart as Product[];
+    get getShoppingCart(): IProduct[] {
+        return this._shoppingCartStore?.shoppingCart as IProduct[];
     }
 
-    onAdd = (item: Product) => {
+    onAdd = (item: IProduct) => {
         this._shoppingCartStore?.onAdd(item);
     };
 
-    onRemove = (item: Product) => {
+    onRemove = (item: IProduct) => {
         this._shoppingCartStore?.onRemove(item);
     };
 

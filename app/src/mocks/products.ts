@@ -1,6 +1,6 @@
-import { Product } from "@/app/src/types/product";
+import { IProduct } from "@/app/src/types/IProduct";
 
-export const PRODUCTS: Product[] = [
+export const PRODUCTS: IProduct[] = [
     {
         id: "1",
         title: "Ноутбук Lenovo IdeaPad Slim 3 15AMN8 (82XQ00X9RA) Arctic Grey",

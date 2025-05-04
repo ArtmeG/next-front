@@ -1,3 +1,6 @@
-import { Product } from "@/app/src/types/product";
+import { IProduct } from "@/app/src/types/IProduct";
 
-export interface IShoppingCart {}
+export interface IShoppingCartProduct extends IProduct {
+    isChecked: boolean;
+    product: IProduct;
+}

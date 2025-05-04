@@ -1,11 +1,11 @@
 "use client";
 import React from "react";
-import { Product } from "@/app/src/types/product";
+import { IProduct } from "@/app/src/types/IProduct";
 import { Button } from "@mui/material";
 import Image from "next/image";
 
 interface Props {
-    product: Product;
+    product: IProduct;
     children?: React.ReactNode;
     onBuy: (id: string) => void;
 }
