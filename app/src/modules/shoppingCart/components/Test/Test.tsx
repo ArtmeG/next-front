@@ -25,7 +25,6 @@ const Test = () => {
             <input value={index} type={"number"} onChange={onChange} />
 
             <button onClick={onClick}>add</button>
-            <div>count------{JSON.stringify(shoppingCartContext?.shoppingCartStore.count)}</div>
         </div>
     );
 };

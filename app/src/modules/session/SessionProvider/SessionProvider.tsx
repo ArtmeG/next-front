@@ -1,30 +1,26 @@
 "use client";
 
-import React, { useEffect, useMemo } from "react";
-import { ShoppingCartContext } from "@/app/src/modules/shoppingCart/context/ShoppingCartContext";
-import ShoppingCartViewModel from "@/app/src/modules/shoppingCart/ShoppingCartViewModel";
-
 interface Props {
     children: React.ReactNode;
 }
-
+// todo 2 додати Session vm and Session store
 const SessionProvider = ({ children }: Props) => {
-    const vm = useMemo(() => {
-        console.log("init ShoppingCartViewModel");
-        return new ShoppingCartViewModel();
-    }, []);
-
-    useEffect(() => {
-        console.log("inside SessionProvider");
-        return () => {
-            vm.destroy();
-        };
-    }, []);
+    // const vm = useMemo(() => {
+    //     console.log("init ShoppingCartViewModel");
+    //     return new ShoppingCartViewModel();
+    // }, []);
+    //
+    // useEffect(() => {
+    //     console.log("inside SessionProvider");
+    //     return () => {
+    //         vm.destroy();
+    //     };
+    // }, []);
 
     return (
         <div>
             {/*<SessionCartContext.Provider value={vm}>*/}
-            <ShoppingCartContext.Provider value={vm}>{children}</ShoppingCartContext.Provider>
+            {children}
             {/*</SessionCartContext.Provider>*/}
         </div>
     );

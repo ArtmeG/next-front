@@ -13,9 +13,6 @@ interface Props {
 const ShoppingCartListItem = ({ item, children, onBuy, onRemove }: Props) => {
     const discountedPrice = item.discount ? item.price - item.discount : item.price;
     return (
-        // <div>
-        //     {/*todo 2 вьорстка, todo3 додати кнопку видалення і заюзати метод видалення*/}
-        // </div>
         <div className="flex max-w-xs flex-col rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
             <Image
                 src={item.img}

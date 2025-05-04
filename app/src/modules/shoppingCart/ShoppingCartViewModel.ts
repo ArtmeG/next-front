@@ -18,7 +18,6 @@ class ShoppingCartViewModel implements ShoppingCartApi {
     }
 
     onAdd = (item: Product) => {
-        console.log("item>>>>", item);
         this._shoppingCartStore?.onAdd(item);
     };
 
