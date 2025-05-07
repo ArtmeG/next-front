@@ -5,7 +5,7 @@ import ShoppingCartListItem from "@/app/src/modules/shoppingCart/components/Shop
 import { observer } from "mobx-react-lite";
 
 const ShoppingCartList = () => {
-    const { getShoppingCart, shoppingCartStore } = useShoppingCartContext() as ShoppingCartApi;
+    const { getShoppingCart, onAdd, onRemove } = useShoppingCartContext() as ShoppingCartApi;
 
     return (
         <div className="flex flex-col gap-4">
@@ -13,8 +13,8 @@ const ShoppingCartList = () => {
                 <ShoppingCartListItem
                     key={item.id}
                     item={item}
-                    onBuy={() => shoppingCartStore.onAdd(item)}
-                    onRemove={() => shoppingCartStore.onRemove(item)}
+                    onBuy={() => onAdd(item)}
+                    onRemove={() => onRemove(item)}
                 />
             ))}
         </div>

@@ -9,7 +9,7 @@ class ShoppingCartStore {
         makeObservable(this);
     }
 
-    get shoppingCart() {
+    get shoppingCart(): IShoppingCartProduct[] {
         return this._shoppingCart;
     }
 
@@ -17,12 +17,12 @@ class ShoppingCartStore {
 
     @action
     onAdd = (item: IShoppingCartProduct) => {
-        this._shoppingCart.push({ product: IProduct, isChecked: true });
+        this._shoppingCart.push(item);
     };
 
     @action
-    onRemove = (item: IShoppingCartProduct) => {
-        this._shoppingCart = this._shoppingCart.filter(product => product.id !== item.id);
+    onRemove = (item: IProduct) => {
+        this._shoppingCart = this._shoppingCart.filter(it => it.product.id !== item.id);
     };
 }
 
